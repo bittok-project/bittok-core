@@ -1,11 +1,11 @@
 [package]
 name = "bittok-primitives"
-authors = ['Bittok Network <https://github.com/bittok-network>']
+authors = ['Bittok Network <https://github.com/bittok-project>']
 description = "Bittok primitives definitions"
 edition = "2018"
 license = 'GPL-3.0'
 homepage = "https://substrate.dev"
-repository = 'https://github.com/bittok-network/bittok'
+repository = 'https://github.com/bittok-project/bittok-core'
 version = '0.9.0'
 
 [dependencies]

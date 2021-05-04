@@ -1,10 +1,10 @@
 [package]
 name = "bittok-rpc-runtime-api"
-authors = ['Bittok Network <https://github.com/bittok-network>']
+authors = ['Bittok Network <https://github.com/bittok-project>']
 edition = "2018"
 license = 'GPL-3.0'
 homepage = 'https://bittok.finance'
-repository = 'https://github.com/bittok-network/bittok'
+repository = 'https://github.com/bittok-project/bittok-core'
 version = '0.9.0'
 
 [package.metadata.docs.rs]

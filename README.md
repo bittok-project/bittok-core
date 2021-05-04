@@ -14,9 +14,9 @@
     <a href="https://docs.bittok.finance"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/bittok-network/bittok/issues">Report Bug</a>
+    <a href="https://github.com/bittok-project/bittok-core/issues">Report Bug</a>
     ·
-    <a href="https://github.com/bittok-network/bittok/issues">Request Feature</a>
+    <a href="https://github.com/bittok-project/bittok-core/issues">Request Feature</a>
   </p>
 </p>
 
@@ -26,7 +26,7 @@
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/bittok-network/bittok/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/bittok-project/bittok-core/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -43,13 +43,13 @@ Contributions are what make the open source community such an amazing place to b
 ## License
 Distributed under the GPL V3 License. See `LICENSE` for more information.
 
-[contributors-shield]: https://img.shields.io/github/contributors/bittok-network/bittok.svg?style=flat-square
-[contributors-url]: https://github.com/bittok-network/bittok/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/bittok-network/bittok.svg?style=flat-square
-[forks-url]: https://github.com/bittok-network/bittok/network/members
-[stars-shield]: https://img.shields.io/github/stars/bittok-network/bittok.svg?style=flat-square
-[stars-url]: https://github.com/bittok-network/bittok/stargazers
-[issues-shield]: https://img.shields.io/github/issues/bittok-network/bittok.svg?style=flat-square
-[issues-url]: https://github.com/bittok-network/bittok/issues
-[license-shield]: https://img.shields.io/github/license/bittok-network/bittok.svg?style=flat-square
-[license-url]: https://github.com/bittok-network/bittok/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/bittok-project/bittok-core.svg?style=flat-square
+[contributors-url]: https://github.com/bittok-project/bittok-core/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/bittok-project/bittok-core.svg?style=flat-square
+[forks-url]: https://github.com/bittok-project/bittok-core/network/members
+[stars-shield]: https://img.shields.io/github/stars/bittok-project/bittok-core.svg?style=flat-square
+[stars-url]: https://github.com/bittok-project/bittok-core/stargazers
+[issues-shield]: https://img.shields.io/github/issues/bittok-project/bittok-core.svg?style=flat-square
+[issues-url]: https://github.com/bittok-project/bittok-core/issues
+[license-shield]: https://img.shields.io/github/license/bittok-project/bittok-core.svg?style=flat-square
+[license-url]: https://github.com/bittok-project/bittok-core/blob/master/LICENSE
