@@ -11,7 +11,7 @@
   <p align="center">
     Bittok network is a connector between decentralized assets and centralized exchanges. Powered by Polkadot parachain technology, Bittok provides a platform for DeFi applications and cross-chain asset interactions.
     <br />
-    <a href="https://docs.bittok.finance"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/bittok-project/bittok-core/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/bittok-project/bittok-core/issues">Report Bug</a>

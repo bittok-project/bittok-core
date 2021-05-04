@@ -355,10 +355,10 @@ pub fn iris_testnet_config() -> Result<ChainSpec, String> {
     ),
     // Bootnodes
     vec![
-      "/dns/seed1.iris-cc2.bittok.finance/tcp/30333/p2p/12D3KooWFtshqoFL1hAwseGc4WuFeREKicjFR15JiVEaJiHnDvn2"
+      "/dns/seed1.iris-cc2.www.bittok.com/tcp/30333/p2p/12D3KooWFtshqoFL1hAwseGc4WuFeREKicjFR15JiVEaJiHnDvn2"
         .parse()
         .unwrap(),
-      "/dns/seed2.iris-cc2.bittok.finance/tcp/30333/p2p/12D3KooWBcU1EShS2azLwQhKVKyeXU2cc3CWyhuN8wJwEKaRVNe8"
+      "/dns/seed2.iris-cc2.www.bittok.com/tcp/30333/p2p/12D3KooWBcU1EShS2azLwQhKVKyeXU2cc3CWyhuN8wJwEKaRVNe8"
         .parse()
         .unwrap(),
     ],
