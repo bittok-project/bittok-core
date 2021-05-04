@@ -367,12 +367,12 @@ impl FeeCalculator for FixedGasPrice {
 }
 
 #[cfg(feature = "bittok-mainnet")]
-const CHAIN_ID: u64 = 1024;
+const CHAIN_ID: u64 = 2048;
 #[cfg(feature = "bittok-testnet")]
-const CHAIN_ID: u64 = 1023;
+const CHAIN_ID: u64 = 2047;
 
 parameter_types! {
-  pub const ChainId: u64 = 1024;
+  pub const ChainId: u64 = 2048;
 }
 
 static BITTOK_EVM_CONFIG: evm::Config = bittok_evm_config::BittokEvmConfig::config();
