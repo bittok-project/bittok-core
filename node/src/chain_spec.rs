@@ -135,7 +135,7 @@ pub fn development_config() -> Result<ChainSpec, String> {
     // Properties
     Some(json!({
       "tokenDecimals": 18,
-      "tokenSymbol": "CLV"
+      "tokenSymbol": "TOK"
     }).as_object().expect("Created an object").clone()),
     // Extensions
     None,
@@ -187,7 +187,7 @@ pub fn local_testnet_config() -> Result<ChainSpec, String> {
     // Properties
     Some(json!({
       "tokenDecimals": 18,
-      "tokenSymbol": "CLV"
+      "tokenSymbol": "TOK"
     }).as_object().expect("Created an object").clone()),
     // Extensions
     None,
@@ -278,7 +278,7 @@ pub fn local_rose_testnet_config() -> Result<ChainSpec, String> {
     // Properties
     Some(json!({
       "tokenDecimals": 18,
-      "tokenSymbol": "CLV"
+      "tokenSymbol": "TOK"
     }).as_object().expect("Created an object").clone()),
     // Extensions
     None,
@@ -369,7 +369,7 @@ pub fn iris_testnet_config() -> Result<ChainSpec, String> {
     // Properties
     Some(json!({
       "tokenDecimals": 18,
-      "tokenSymbol": "CLV"
+      "tokenSymbol": "TOK"
     }).as_object().expect("Created an object").clone()),
     // Extensions
     None,

@@ -1010,7 +1010,7 @@ impl pallet_contracts::Config for Runtime {
 }
 
 parameter_types! {
-  pub Prefix: &'static [u8] = b"Pay CLVs to the Bittok account:";
+  pub Prefix: &'static [u8] = b"Pay TOKs to the Bittok account:";
   pub const ClaimsModuleId: ModuleId = ModuleId(*b"clvclaim");
 }
 

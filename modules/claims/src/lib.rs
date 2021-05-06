@@ -121,7 +121,7 @@ pub mod pallet {
     MintSuccess(EthereumTxHash, EthereumAddress, BalanceOf<T>),
     /// claim limit updated
     ClaimLimitUpdated(BalanceOf<T>),
-    /// CLV claimed
+    /// TOK claimed
     Claimed(T::AccountId, EthereumAddress, BalanceOf<T>),
     // burned some balance and will bridge to bsc
     Burned(T::AccountId, EthereumAddress, BalanceOf<T>),
@@ -140,7 +140,7 @@ pub mod pallet {
     ),
     /// Elastic claim limit updated for network
     ElasticClaimLimitUpdated(BridgeNetworks, BalanceOf<T>),
-    /// CLV claimed for network
+    /// TOK claimed for network
     ElasticClaimed(BridgeNetworks, T::AccountId, EthereumAddress, BalanceOf<T>),
     /// burned some balance and will bridge to specified network
     ElasticBurned(BridgeNetworks, T::AccountId, EthereumAddress, BalanceOf<T>),

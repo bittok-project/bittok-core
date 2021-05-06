@@ -55,7 +55,7 @@ impl pallet_balances::Config for Test {
 }
 
 parameter_types! {
-    pub Prefix: &'static [u8] = b"Pay CLVs to the TEST account:";
+    pub Prefix: &'static [u8] = b"Pay TOKs to the TEST account:";
     pub const ClaimsModuleId: ModuleId = ModuleId(*b"clvclaim");
 }
 impl Config for Test {
@@ -108,19 +108,19 @@ pub fn get_legal_eth_addr() -> EthereumAddress {
 
 pub fn get_legal_eth_sig() -> EcdsaSignature {
   // `243E34C336F3D2c08BBC79b99E6BCA1fA7c58595`'s sig
-  // data: Pay CLVs to the TEST account:01000000000000004c5adaad6ca9cd2ae9f372b59ff6765fb66082c08caf6e61e6fbc39c35e82bec
+  // data: Pay TOKs to the TEST account:01000000000000004c5adaad6ca9cd2ae9f372b59ff6765fb66082c08caf6e61e6fbc39c35e82bec
   EcdsaSignature(hex!["c179736cc655655e14f8b66d386045df26f5f441ba6e58d153dfa1ffdd329ccc602bf23833371f87f408ecb093dc9839f24fa35473c3693ce5395780309f2a7f1b"])
 }
 
 pub fn get_another_account_eth_sig() -> EcdsaSignature {
   // account: divert balcony sick decorate like plate faith ivory surface where peanut way
   // `f189cdFF5C1A903e20397b110f5D99B0460C67DC`'s sig
-  // data: Pay CLVs to the TEST account:01000000000000004c5adaad6ca9cd2ae9f372b59ff6765fb66082c08caf6e61e6fbc39c35e82bec
+  // data: Pay TOKs to the TEST account:01000000000000004c5adaad6ca9cd2ae9f372b59ff6765fb66082c08caf6e61e6fbc39c35e82bec
   EcdsaSignature(hex!["7dc3cd6d99fb0dd1f8fbc4fae9aec8399e913496e3dbd33ddd83f723665ecf4569b715c430239750ffb2973d094cfa4fbb808b3f0ec1ef2caff5d5e473b2332a1b"])
 }
 
 pub fn get_wrong_msg_eth_sig() -> EcdsaSignature {
   // `0x243E34C336F3D2c08BBC79b99E6BCA1fA7c58595`'s sig
-  // data: Pay CLVs to the TEST account2:010000000000000
+  // data: Pay TOKs to the TEST account2:010000000000000
   EcdsaSignature(hex!["7dc3cd6d99fb0dd1f8fbc4fae9aec8399e913496e3dbd33ddd83f723665ecf4569b715c430239750ffb2973d094cfa4fbb808b3f0ec1ef2caff5d5e473b2332a1c"])
 }

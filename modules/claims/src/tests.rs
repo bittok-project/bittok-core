@@ -60,7 +60,7 @@ fn mint_and_claim_should_works() {
     );
 
     // Claim it with correct msg sig
-    // Pay CLVs to the TEST account:0100000000000000
+    // Pay TOKs to the TEST account:0100000000000000
     let sig = get_legal_eth_sig();
     assert_eq!(Balances::free_balance(1), 0);
     assert_ok!(BittokClaims::claim_elastic(
@@ -124,7 +124,7 @@ fn ethereum_mint_and_claim_should_works() {
     );
 
     // Claim it with correct msg sig
-    // Pay CLVs to the TEST account:0100000000000000
+    // Pay TOKs to the TEST account:0100000000000000
     let sig = get_legal_eth_sig();
     assert_eq!(Balances::free_balance(1), 0);
     assert_noop!(
@@ -209,7 +209,7 @@ fn mint_fee_should_work() {
       1800
     );
     // Claim it with correct msg sig
-    // Pay CLVs to the TEST account:0100000000000000
+    // Pay TOKs to the TEST account:0100000000000000
     let sig = get_legal_eth_sig();
     assert_eq!(Balances::free_balance(1), 0);
     assert_ok!(BittokClaims::claim_elastic(
@@ -400,7 +400,7 @@ fn claim_twice_should_fail() {
     ));
 
     // Claim it
-    // Pay CLVs to the TEST account:0100000000000000
+    // Pay TOKs to the TEST account:0100000000000000
     let sig = get_legal_eth_sig();
     assert_eq!(Balances::free_balance(1), 0);
     assert_ok!(BittokClaims::claim_elastic(

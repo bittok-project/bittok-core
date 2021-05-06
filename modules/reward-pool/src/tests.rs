@@ -56,7 +56,7 @@ fn test_reward_single_account() {
   let pool_account = RPM::sub_account_id(pool_id.clone());
 
   ExtBuilder::default().build().execute_with(|| {
-    let initial_balance = Currencies::total_balance(CurrencyId::CLV, &alice);
+    let initial_balance = Currencies::total_balance(CurrencyId::TOK, &alice);
     run_to_block(10);
     assert!(RPM::add_share(&alice, pool_id, 100).is_ok(), "should add shares to the pool");
     run_to_block(20);
@@ -79,13 +79,13 @@ fn test_reward_single_account() {
 
     check_pool_data(&pool_id, &alice, 100, 25 * DOLLARS, 15 * DOLLARS, 100, 10 * DOLLARS);
 
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &pool_account), 15 * DOLLARS);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &pool_account), 15 * DOLLARS);
 
     run_to_block(50);
     assert!(RPM::remove_share(&alice, pool_id, 100).is_ok(), "should remove shares to the pool");
     check_pool_data(&pool_id, &alice, 0, 0, 0, 0, 0);
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &alice), initial_balance + 40 * DOLLARS);
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &pool_account), 0);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &alice), initial_balance + 40 * DOLLARS);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &pool_account), 0);
   });
 }
 
@@ -96,7 +96,7 @@ fn test_reward_single_account_existential() {
   let pool_account = RPM::sub_account_id(pool_id.clone());
 
   ExtBuilder::default().build().execute_with(|| {
-    let initial_balance = Currencies::total_balance(CurrencyId::CLV, &alice);
+    let initial_balance = Currencies::total_balance(CurrencyId::TOK, &alice);
     run_to_block(10);
     assert!(RPM::add_share(&alice, pool_id, 1_000_000_000_000).is_ok(), "should add shares to the pool");
     run_to_block(11);
@@ -104,16 +104,16 @@ fn test_reward_single_account_existential() {
     // 1 share's reward is 1, which is too small to send
     check_pool_data(&pool_id, &alice, 999_999_999_999, 1 * DOLLARS, 1 * DOLLARS, 999_999_999_999, 0);
 
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &alice), initial_balance);
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &pool_account), 1 * DOLLARS);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &alice), initial_balance);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &pool_account), 1 * DOLLARS);
 
     run_to_block(20);
     assert!(RPM::remove_share(&alice, pool_id, 999_999_999_999).is_ok());
     // remove all shares, all reward should send to alice
     check_pool_data(&pool_id, &alice, 0, 0, 0, 0, 0);
 
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &alice), initial_balance + 10 * DOLLARS);
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &pool_account), 0);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &alice), initial_balance + 10 * DOLLARS);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &pool_account), 0);
   });
 }
 
@@ -136,9 +136,9 @@ fn test_multi_account_rewards() {
   //  dave: 25 + 50  = 75
 
   ExtBuilder::default().build().execute_with(|| {
-    let initial_alice = Currencies::total_balance(CurrencyId::CLV, &alice);
-    let initial_bob = Currencies::total_balance(CurrencyId::CLV, &bob);
-    let initial_dave = Currencies::total_balance(CurrencyId::CLV, &dave);
+    let initial_alice = Currencies::total_balance(CurrencyId::TOK, &alice);
+    let initial_bob = Currencies::total_balance(CurrencyId::TOK, &bob);
+    let initial_dave = Currencies::total_balance(CurrencyId::TOK, &dave);
     run_to_block(100);
     assert!(RPM::add_share(&alice, pool_id, 100 * DOLLARS).is_ok(), "should add shares to the pool");
     run_to_block(200);
@@ -159,11 +159,11 @@ fn test_multi_account_rewards() {
     check_pool_data(&pool_id, &alice, 0, 0, 0, 0, 0);
     check_pool_data(&pool_id, &bob, 0, 0, 0, 0, 0);
     check_pool_data(&pool_id, &dave, 0, 0, 0, 0, 0);
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &pool_account), 0);
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &alice), initial_alice + 150 * DOLLARS);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &pool_account), 0);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &alice), initial_alice + 150 * DOLLARS);
     // rounding issue
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &bob), initial_bob + 175 * DOLLARS + 1);
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &dave), initial_dave + 75 * DOLLARS - 1);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &bob), initial_bob + 175 * DOLLARS + 1);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &dave), initial_dave + 75 * DOLLARS - 1);
   });
 }
 
@@ -184,9 +184,9 @@ fn test_claim_rewards() {
   //  dave: 25 + 50  = 75
 
   ExtBuilder::default().build().execute_with(|| {
-    let initial_alice = Currencies::total_balance(CurrencyId::CLV, &alice);
-    let initial_bob = Currencies::total_balance(CurrencyId::CLV, &bob);
-    // let initial_dave = Currencies::total_balance(CurrencyId::CLV, &dave);
+    let initial_alice = Currencies::total_balance(CurrencyId::TOK, &alice);
+    let initial_bob = Currencies::total_balance(CurrencyId::TOK, &bob);
+    // let initial_dave = Currencies::total_balance(CurrencyId::TOK, &dave);
     run_to_block(100);
     assert!(RPM::add_share(&alice, pool_id, 100 * DOLLARS).is_ok(), "should add shares to the pool");
 
@@ -205,7 +205,7 @@ fn test_claim_rewards() {
     assert!(RPM::add_share(&dave, pool_id, 100 * DOLLARS).is_ok(), "should add shares to the pool");
 
     let alice_balance = initial_alice + 150 * DOLLARS;
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &alice), alice_balance);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &alice), alice_balance);
     check_pool_data(&pool_id, &alice,
                     400 * DOLLARS,
                     600 * DOLLARS, 50 * DOLLARS,
@@ -217,7 +217,7 @@ fn test_claim_rewards() {
     // alice's left: 25
     assert!(RPM::claim_rewards(&alice, &pool_id).is_ok(), "should claims rewards from the pool");
     let alice_balance = alice_balance + 25 * DOLLARS;
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &alice), alice_balance);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &alice), alice_balance);
     check_pool_data(&pool_id, &alice,
                     400 * DOLLARS, //shares
                     700 * DOLLARS, 125 * DOLLARS, // total, useable rewards
@@ -232,7 +232,7 @@ fn test_claim_rewards() {
     150 * DOLLARS, 200 * DOLLARS + 625 * DOLLARS / 10); // bob shares and borrow
 
     let bob_balance = initial_bob + 625 * DOLLARS / 10;
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &bob), bob_balance);
-    assert_eq!(Currencies::total_balance(CurrencyId::CLV, &pool_account), 625 * DOLLARS / 10);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &bob), bob_balance);
+    assert_eq!(Currencies::total_balance(CurrencyId::TOK, &pool_account), 625 * DOLLARS / 10);
   });
 }

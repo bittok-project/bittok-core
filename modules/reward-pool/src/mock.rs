@@ -110,7 +110,7 @@ impl orml_tokens::Config for TestRuntime {
 pub type Tokens = orml_tokens::Module<TestRuntime>;
 
 parameter_types! {
-  pub const GetNativeCurrencyId: CurrencyId = CurrencyId::CLV;
+  pub const GetNativeCurrencyId: CurrencyId = CurrencyId::TOK;
 }
 
 impl orml_currencies::Config for TestRuntime {
@@ -162,7 +162,7 @@ pub type RewardPoolModule = Module<TestRuntime>;
 pub const ALICE: [u8; 32] = [0u8; 32];
 pub const BOB: [u8; 32] = [1u8; 32];
 pub const DAVE: [u8; 32] = [2u8; 32];
-pub const CLV: CurrencyId = CurrencyId::CLV;
+pub const TOK: CurrencyId = CurrencyId::TOK;
 pub const CUSDT: CurrencyId = CurrencyId::CUSDT;
 pub const DOT: CurrencyId = CurrencyId::DOT;
 pub const CETH: CurrencyId = CurrencyId::CETH;
@@ -178,8 +178,8 @@ impl Default for ExtBuilder {
 
     Self {
       endowed_accounts: vec![
-        (alice.clone(), CLV, 1_000_000_000_000_000_000u128),
-        (bob.clone(), CLV, 1_000_000_000_000_000_000u128),
+        (alice.clone(), TOK, 1_000_000_000_000_000_000u128),
+        (bob.clone(), TOK, 1_000_000_000_000_000_000u128),
         (alice.clone(), CUSDT, 1_000_000_000_000_000_000u128),
         (bob.clone(), CUSDT, 1_000_000_000_000_000_000u128),
         (alice.clone(), DOT, 1_000_000_000_000_000_000u128),
@@ -202,7 +202,7 @@ impl ExtBuilder {
         .endowed_accounts
         .clone()
         .into_iter()
-        .filter(|(_, currency_id, _)| *currency_id == CLV)
+        .filter(|(_, currency_id, _)| *currency_id == TOK)
         .map(|(account_id, _, initial_balance)| (account_id, initial_balance))
         .collect::<Vec<_>>(),
     }
@@ -213,7 +213,7 @@ impl ExtBuilder {
       endowed_accounts: self
         .endowed_accounts
         .into_iter()
-        .filter(|(_, currency_id, _)| *currency_id != CLV)
+        .filter(|(_, currency_id, _)| *currency_id != TOK)
         .collect::<Vec<_>>(),
     }
     .assimilate_storage(&mut t).unwrap();

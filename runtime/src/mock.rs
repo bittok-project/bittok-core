@@ -36,7 +36,7 @@ impl frame_system::Config for TestRuntime {
 pub const ALICE: [u8; 32] = [0u8; 32];
 pub const BOB: [u8; 32] = [1u8; 32];
 pub const DAVE: [u8; 32] = [2u8; 32];
-pub const CLV: CurrencyId = CurrencyId::CLV;
+pub const TOK: CurrencyId = CurrencyId::TOK;
 
 pub struct ExtBuilder {
   endowed_accounts: Vec<(AccountId, CurrencyId, Balance)>,
@@ -66,7 +66,7 @@ impl ExtBuilder {
         .endowed_accounts
         .clone()
         .into_iter()
-        .filter(|(_, currency_id, _)| *currency_id == CLV)
+        .filter(|(_, currency_id, _)| *currency_id == TOK)
         // the balance of any account should always be more than existential deposit.
         .map(|(account_id, _, _initial_balance)| (account_id, 500))
         .collect::<Vec<_>>(),
@@ -78,7 +78,7 @@ impl ExtBuilder {
       endowed_accounts: self
         .endowed_accounts
         .into_iter()
-        .filter(|(_, currency_id, _)| *currency_id != CLV)
+        .filter(|(_, currency_id, _)| *currency_id != TOK)
         .collect::<Vec<_>>(),
     }
     .assimilate_storage(&mut t)
