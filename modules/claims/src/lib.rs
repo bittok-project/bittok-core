@@ -1,5 +1,5 @@
-// Copyright (C) 2021 Clover Network
-// This file is part of Clover.
+// Copyright (C) 2021 Bittok Network
+// This file is part of Bittok.
 
 //! Module to process claims from ethereum like addresses(e.g. bsc).
 #![cfg_attr(not(feature = "std"), no_std)]
@@ -55,7 +55,7 @@ pub mod pallet {
         return 0;
       }
 
-      sp_runtime::print("clover claims runtime upgrade");
+      sp_runtime::print("bittok claims runtime upgrade");
       // copy existing claims to elastic claims storage
       for (k, v) in Claims::<T>::iter() {
         if !ElasticClaims::<T>::contains_key(BridgeNetworks::BSC, k) {
@@ -149,7 +149,7 @@ pub mod pallet {
     ElasticFeeUpdated(BridgeNetworks, BalanceOf<T>, BalanceOf<T>),
   }
 
-  /// Supported bridge networks By Clover
+  /// Supported bridge networks By Bittok
   #[derive(Encode, Decode, Clone, Copy, PartialEq, Eq, RuntimeDebug)]
   pub enum BridgeNetworks {
     /// Binance Smart Chain
